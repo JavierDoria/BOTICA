@@ -4,6 +4,8 @@
  */
 package com.sise.botica.ui;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jjjja
@@ -47,10 +49,10 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel1.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("SISTEMA DE VENTAS - TIENDA MENOS");
+        jLabel1.setText("SISTEMA DE VENTAS - BOTICA");
 
         jLabel2.setText("Nombre Usuario:");
 
@@ -90,7 +92,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
                 .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -98,12 +100,27 @@ public class Login extends javax.swing.JFrame {
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         // TODO add your handling code here:
-
-       
-
-        MenuPrincipal principal = new MenuPrincipal();
-        principal.setVisible(true);
-        this.dispose();
+        String usuario = txtNombreUsuario.getText();
+        String clave = txtClave.getText();
+        if(usuario.equals("admin") && clave.equals("admin")){
+            MenuPrincipalAdmin admin= new MenuPrincipalAdmin();
+            admin.setVisible(true);
+            this.dispose();
+        }else if (usuario.equals("trabajador") && clave.equals("trabajador")){
+            MenuPrincipal principal = new MenuPrincipal();
+            principal.setVisible(true);
+            this.dispose();
+        }else{
+            JOptionPane.showMessageDialog(this, 
+        "Usuario o contraseña incorrectos", 
+        "Error de inicio de sesión", 
+        JOptionPane.ERROR_MESSAGE);
+            
+        txtNombreUsuario.setText("");
+        txtClave.setText("");
+   
+        txtNombreUsuario.requestFocus();
+        }
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**

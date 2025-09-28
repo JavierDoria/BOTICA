@@ -159,7 +159,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             ((javax.swing.JInternalFrame) c).dispose();
         }
     }
-        AgregaProducto producto = new AgregaProducto();
+        BuscarProducto producto = new BuscarProducto();
         producto.setVisible(true);
         pnlVenta.add(producto);
     }//GEN-LAST:event_jMenuItem3ActionPerformed

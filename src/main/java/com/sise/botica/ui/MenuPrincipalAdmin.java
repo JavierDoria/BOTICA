@@ -83,7 +83,7 @@ public class MenuPrincipalAdmin extends javax.swing.JFrame {
 
         jMenu3.setText("Productos");
 
-        jMenuItem3.setText("Buscar Producto");
+        jMenuItem3.setText("Agregar producto");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
